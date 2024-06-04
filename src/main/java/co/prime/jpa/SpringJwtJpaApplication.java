@@ -1,22 +1,25 @@
 package co.prime.jpa;
 
-import co.prime.jpa.entity.Book;
-import co.prime.jpa.repository.BookRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.List;
-
 @SpringBootApplication
-public class SpringJwtJpaApplication implements CommandLineRunner {
+public class SpringJwtJpaApplication {
 
-    private BookRepository bookRepository;
+    public static void main(String[] args) {
+        SpringApplication.run(SpringJwtJpaApplication.class, args);
+    }
+
+  /*  private BookRepository bookRepository;
+    private BookService service;
 
     @Autowired
     public void setBookRepository(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
+    }
+    @Autowired
+    public void setService(BookService service) {
+        this.service = service;
     }
 
     public static void main(String[] args) {
@@ -25,7 +28,7 @@ public class SpringJwtJpaApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        /*Book book = new Book();
+        *//*Book book = new Book();
         book.setTitle("Java");
         bookRepository.save(book);
 
@@ -39,18 +42,25 @@ public class SpringJwtJpaApplication implements CommandLineRunner {
 
         Book book3 = new Book();
         book3.setTitle("Cloud");
-        bookRepository.save(book3);*/
+        bookRepository.save(book3);*//*
 
-       /*List<Book> bookList = bookRepository.findByTitleIsContainingIgnoreCase("A");
-       bookList.forEach(book -> System.out.println(bookList));*/
+       *//*List<Book> bookList = bookRepository.findByTitleIsContainingIgnoreCase("A");
+       bookList.forEach(book -> System.out.println(bookList));*//*
 
-        /*List<Book> bookList = bookRepository.findByTitleIsStartingWithIgnoreCase("A");
+        *//*List<Book> bookList = bookRepository.findByTitleIsStartingWithIgnoreCase("A");
         for (Book book : bookList) {
             System.out.println(book);
-        }*/
+        }*//*
 
-        var bookList = bookRepository.selectByAuthorName("Makara");
-        bookList.forEach(book -> System.out.println(bookList));
+     *//*   var bookList = bookRepository.selectByAuthorName("Makara");
+        bookList.forEach(book -> System.out.println(bookList));*//*
 
-    }
+        Book bookKey = bookRepository.selectByPrimary(UUID
+                        .fromString("ddf19e8b-e9ef-4d9e-b09f-9876c7a0daf1")).orElseThrow();
+        System.out.println(bookKey);
+
+
+        service.deleteBookByStatus(false);*/
+
+
 }
