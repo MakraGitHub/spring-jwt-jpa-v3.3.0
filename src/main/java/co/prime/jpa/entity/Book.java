@@ -1,11 +1,11 @@
 package co.prime.jpa.entity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import java.util.UUID;
 
-@Data
+@Getter
+@Setter
 @Entity(name = "e_book")
 @Table(name = "books")
 @NoArgsConstructor

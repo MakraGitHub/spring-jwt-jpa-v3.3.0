@@ -1,14 +1,18 @@
 package co.prime.jpa;
 
+import co.prime.jpa.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringJwtJpaApplication {
+public class SpringJwtJpaApplication{
 
     public static void main(String[] args) {
         SpringApplication.run(SpringJwtJpaApplication.class, args);
     }
+
 
   /*  private BookRepository bookRepository;
     private BookService service;

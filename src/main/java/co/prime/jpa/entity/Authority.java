@@ -11,13 +11,11 @@ import java.util.List;
 @Table(name = "authorities")
 @Data
 @NoArgsConstructor
-@ToString
 public class Authority {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String name;
 
     @ManyToMany(mappedBy = "authorities")
