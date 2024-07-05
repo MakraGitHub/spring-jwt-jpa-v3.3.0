@@ -19,7 +19,6 @@ public class KeyConfig {
         keyPair.initialize(2048);
         return keyPair.generateKeyPair();
     }
-
     @Bean
     public RSAKey rsaKey(KeyPair keyPair){
         return new RSAKey.Builder((RSAPublicKey) keyPair.getPublic())

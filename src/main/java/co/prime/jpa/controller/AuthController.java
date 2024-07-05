@@ -1,8 +1,9 @@
 package co.prime.jpa.controller;
 
+import co.prime.jpa.dto.AuthDTO;
 import co.prime.jpa.dto.LoginDTO;
+import co.prime.jpa.dto.RefreshTokenDTO;
 import co.prime.jpa.service.AuthService;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,11 +17,14 @@ public class AuthController {
 
     private final AuthService authService;
     @PostMapping("/login")
-    public String login(@RequestBody LoginDTO logInDto){
+    public AuthDTO login(@RequestBody LoginDTO logInDto){
+      return  authService.login(logInDto);
 
-      String token =  authService.login(logInDto);
-      return  token;
+    }
 
+    @PostMapping("/refresh")
+    public AuthDTO refresh(@RequestBody RefreshTokenDTO refreshToken){
+        return authService.refresh(refreshToken);
     }
 
 }
