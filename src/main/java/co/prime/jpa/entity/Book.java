@@ -1,12 +1,12 @@
 package co.prime.jpa.entity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import java.util.UUID;
 
-@Data
-@Entity
+@Getter
+@Setter
+@Entity(name = "e_book")
 @Table(name = "books")
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,4 +15,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID uuid;
     private String title;
+    private String author;
+    private Boolean status;
+
 }
