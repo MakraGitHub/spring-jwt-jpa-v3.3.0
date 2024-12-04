@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import java.util.UUID;
 
 @Data
-@Entity
+@Entity(name = "e_book")
 @Table(name = "books")
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,4 +15,9 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID uuid;
     private String title;
+    private String author;
+    private Boolean status;
+
+
+
 }
